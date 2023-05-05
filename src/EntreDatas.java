@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
@@ -29,6 +30,10 @@ public class EntreDatas {
         System.out.println("Diferença em Dias: " + ChronoUnit.DAYS.between(dateInicial, dateFinal));
         System.out.println("Diferença em Meses: " + ChronoUnit.MONTHS.between(dateInicial, dateFinal));
         System.out.println("Diferença em Anos: " + ChronoUnit.YEARS.between(dateInicial, dateFinal));
+
+        Period periodoEntre = Period.between(dateInicial, dateFinal);
+
+        System.out.printf("Anos: %d, Meses: %d, Dias: %d", periodoEntre.getYears(), periodoEntre.getMonths(), periodoEntre.getDays());
 
         scanner.close();
     }
